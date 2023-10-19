@@ -1,3 +1,29 @@
 body {
-	background-color: red;
+	background-color: #02060c;
+	margin-left: 8vw;
+	margin-right: 8vw;
+}
+
+.hero-wrapper {
+	margin-top: 10vh;
+	.logo {
+		opacity: 0;
+		img {
+			display: flex;
+			margin: auto;
+			width: 40vw;
+			height: auto;
+		}
+		animation: logoMove 0.5s cubic-bezier(0.79, 0.33, 0.14, 0.53) 0.4s 1 forwards;
+	}
+}
+
+@keyframes logoMove {
+	from {
+		opacity: 0;
+	}
+	to {
+		transform: translateY(-10px);
+		opacity: 1;
+	}
 }
