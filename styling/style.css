@@ -90,15 +90,16 @@ body {
 @media (max-width: 470px) {
   .enteringPill {
     padding: 8px 16px;
+    gap: 2px;
   }
   .enteringPill .logo-text {
     font-size: 22px !important;
   }
   .enteringPill .star-l {
-    transform: scale(0.5);
+    transform: scale(0.65) !important;
   }
   .enteringPill .star-r {
-    transform: scale(0.5);
+    transform: scale(0.65) !important;
   }
   .enteringPill:hover .logo {
     background-color: none;
