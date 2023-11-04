@@ -21,6 +21,8 @@
 body {
   background-color: #02060c;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .circleblur {
@@ -84,4 +86,31 @@ body {
 }
 .enteringPill .star-r {
   transform: scale(0.7);
+}
+
+.content {
+  text-align: left;
+  width: 32vw;
+  height: auto;
+  margin: 0 auto;
+  display: none;
+  transform: translateY(-28vh);
+}
+.content .body .heading {
+  font-family: basis;
+  font-size: 20px;
+  letter-spacing: -0.7px;
+  opacity: 1;
+  color: white;
+  font-weight: 600;
+}
+.content .body .subheading {
+  margin-top: 8px;
+  font-family: basis;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 400;
+  opacity: 0.8;
+  letter-spacing: -0.7px;
+  color: white;
 }/*# sourceMappingURL=style.css.map */

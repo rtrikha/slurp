@@ -561,5 +561,7 @@ function initiateFriday() {
 		document.body.style.overflow = 'auto';
 	}, 1500);
 
-	fridayInitiated = true;
+	setTimeout(() => {
+		document.getElementById('content').style.display = 'block';
+	}, 1500);
 }
