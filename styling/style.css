@@ -226,4 +226,10 @@ body {
     font-size: 16px !important;
     line-height: 21px !important;
   }
+  .content .buttons .figma {
+    font-size: 14px !important;
+  }
+  .content .buttons .github {
+    font-size: 14px !important;
+  }
 }/*# sourceMappingURL=style.css.map */
