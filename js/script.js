@@ -552,17 +552,16 @@ function initiateFriday() {
 		circleblur.style.transition = 'all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86)';
 		circleblur.style.filter = 'blur(1)';
 		document.body.style.overflow = 'hidden';
+	}, 800);
+	setTimeout(() => {
 		document.body.style.backgroundColor = '#f15700';
-	}, 700);
+	}, 1200);
 	setTimeout(() => {
-		circleblur.style.opacity = '0';
-	}, 1300);
-	setTimeout(() => {
-		circleblur.style.display = 'none';
 		document.body.style.overflow = 'auto';
-	}, 1500);
+	}, 1300);
 
 	setTimeout(() => {
+		circleblur.style.display = 'none';
 		content.style.display = 'block';
 	}, 1500);
 	setTimeout(() => {
