@@ -1,4 +1,3 @@
-var fridayInitiated = false;
 var isMouseHover = false;
 var VanillaTilt = (function () {
 	'use strict';
@@ -512,6 +511,7 @@ const starL = document.getElementById('star-l');
 const starR = document.getElementById('star-r');
 const circleblur = document.getElementById('circleblur');
 const content = document.getElementById('content');
+const headerblur = document.getElementById('headerblur');
 
 function pillInactive() {
 	logoText.style.color = '#ffffff';
@@ -538,7 +538,7 @@ function initiateFriday() {
 	enteringPill.vanillaTilt.destroy();
 
 	setTimeout(() => {
-		document.body.style.transition = 'all 0.3s 0.5s ease';
+		document.body.style.transition = 'all 0.3s ease';
 		enteringPill.style.transform = 'translateY(-36vh)';
 		enteringPill.style.transition = 'all 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86)';
 	}, 500);
@@ -569,4 +569,17 @@ function initiateFriday() {
 		content.style.transform = 'translateY(-28vh)';
 		content.style.opacity = '1';
 	}, 1600);
+}
+
+window.addEventListener('scroll', checkIfDivLeftViewport);
+
+function checkIfDivLeftViewport() {
+	if (enteringPill.getBoundingClientRect().top <= 0) {
+		//enteringPill.style.transform = 'translateX(100%)';
+		console.log('left');
+		headerblur.style.display = 'block';
+	} else {
+		console.log('right');
+		headerblur.style.display = 'none';
+	}
 }

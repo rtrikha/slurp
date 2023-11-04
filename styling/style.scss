@@ -2,6 +2,7 @@
 
 body {
 	background-color: #02060c;
+	//background-color: #f15700;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -18,6 +19,17 @@ body {
 	filter: blur(60px);
 }
 
+.headerblur {
+	width: 100vw;
+	height: 120px;
+	background: linear-gradient(180deg, #f15700 0%, rgba(241, 87, 0, 0) 100%);
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	display: none;
+	opacity: 0.8;
+}
+
 .enteringPill {
 	cursor: pointer;
 	margin: auto;
@@ -32,12 +44,12 @@ body {
 	border-radius: 40px;
 	transform-style: preserve-3d;
 	transform: perspective(1000);
-
+	z-index: 1000;
 	&:hover {
 		background-color: white;
 		transition: all 0.3s ease;
 		.logo-text {
-			color: #02060c;
+			color: #02060c !important;
 		}
 		.star-l {
 			filter: invert(1);
@@ -102,10 +114,12 @@ body {
 	width: 32vw;
 	height: auto;
 	margin: 0 auto;
+	//display: block;
 	display: none;
 	transform: translateY(-27vh);
 	transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 	opacity: 0;
+	//opacity: 1;
 	.body {
 		margin-bottom: 32px;
 		.heading {
@@ -125,6 +139,77 @@ body {
 			opacity: 0.8;
 			letter-spacing: -0.7px;
 			color: white;
+		}
+		.buttons {
+			display: flex;
+			gap: 8px;
+			margin-top: 16px;
+
+			.figma {
+				display: flex;
+				cursor: pointer;
+				width: 50%;
+				font-family: basis;
+				font-size: 16px;
+				height: 48px;
+				font-weight: 600;
+				letter-spacing: -0.6px;
+				border-style: none;
+				border-radius: 12px;
+				background: white;
+				transition: all 0.2s ease-in-out;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+				gap: 4px;
+				&:hover {
+					background: #f4f4f4;
+					transform: scale(0.98);
+				}
+				img {
+					width: 20px;
+					height: 20px;
+				}
+			}
+			.github {
+				display: flex;
+				cursor: pointer;
+				width: 50%;
+				font-family: basis;
+				font-size: 16px;
+				height: 48px;
+				font-weight: 600;
+				letter-spacing: -0.6px;
+				border-style: none;
+				border-radius: 12px;
+				background: black;
+				color: white;
+				text-align: center;
+				align-items: center;
+				justify-content: center;
+				gap: 6px;
+				transition: all 0.2s ease-in-out;
+				&:hover {
+					background: #1c1c1c;
+					transform: scale(0.98);
+				}
+				img {
+					width: 20px;
+					height: 20px;
+					filter: invert(1);
+				}
+			}
+		}
+	}
+
+	@media (max-width: 470px) {
+		width: 70vw;
+		.heading {
+			font-size: 18px !important;
+		}
+		.subheading {
+			font-size: 16px !important;
+			line-height: 21px !important;
 		}
 	}
 }
