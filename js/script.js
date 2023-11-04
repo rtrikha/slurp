@@ -511,6 +511,7 @@ const logoText = document.getElementById('logo-text');
 const starL = document.getElementById('star-l');
 const starR = document.getElementById('star-r');
 const circleblur = document.getElementById('circleblur');
+const content = document.getElementById('content');
 
 function pillInactive() {
 	logoText.style.color = '#ffffff';
@@ -525,7 +526,7 @@ function pillActive() {
 	logoText.style.color = '#000000';
 	starL.style.filter = 'invert(1)';
 	starR.style.filter = 'invert(1)';
-	enteringPill.style.boxShadow = '0 16px 16px -2px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.12), 0 8px 12px -4px rgba(0, 0, 0, 0.08)';
+	enteringPill.style.boxShadow = '0 4px 2px rgba(0,0,0,0.04), 0 8px 4px rgba(0,0,0,0.04), 0 16px 8px rgba(0,0,0,0.04), 0 32px 16px rgba(0,0,0,0.02)';
 	enteringPill.style.background = '#ffffff';
 	enteringPill.style.border = '2px solid rgba(35, 35, 35,0)';
 	enteringPill.style.transition = 'all 0.4s ease';
@@ -562,6 +563,10 @@ function initiateFriday() {
 	}, 1500);
 
 	setTimeout(() => {
-		document.getElementById('content').style.display = 'block';
+		content.style.display = 'block';
 	}, 1500);
+	setTimeout(() => {
+		content.style.transform = 'translateY(-28vh)';
+		content.style.opacity = '1';
+	}, 1600);
 }

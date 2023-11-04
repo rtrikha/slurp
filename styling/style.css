@@ -38,6 +38,7 @@ body {
 }
 
 .enteringPill {
+  cursor: pointer;
   margin: auto;
   display: flex;
   height: auto;
@@ -54,7 +55,6 @@ body {
 }
 .enteringPill:hover {
   background-color: white;
-  box-shadow: 0 16px 16px -2px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.12), 0 8px 12px -4px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 .enteringPill:hover .logo-text {
@@ -75,17 +75,41 @@ body {
   gap: 4px;
   transform: translateZ(12px);
 }
-.enteringPill .logo-text {
+.enteringPill .inner .logo-text {
   color: white;
   font-family: basis;
   font-size: 28px;
   letter-spacing: -1px;
 }
-.enteringPill .star-l {
+.enteringPill .inner .star-l {
   transform: scale(0.7);
 }
-.enteringPill .star-r {
+.enteringPill .inner .star-r {
   transform: scale(0.7);
+}
+@media (max-width: 470px) {
+  .enteringPill {
+    padding: 8px 16px;
+  }
+  .enteringPill .logo-text {
+    font-size: 22px !important;
+  }
+  .enteringPill .star-l {
+    transform: scale(0.5);
+  }
+  .enteringPill .star-r {
+    transform: scale(0.5);
+  }
+  .enteringPill:hover .logo {
+    background-color: none;
+    border: 2px solid rgb(35, 35, 35);
+  }
+  .enteringPill:hover .star-l {
+    filter: invert(0);
+  }
+  .enteringPill:hover .star-r {
+    filter: invert(0);
+  }
 }
 
 .content {
@@ -94,7 +118,12 @@ body {
   height: auto;
   margin: 0 auto;
   display: none;
-  transform: translateY(-28vh);
+  transform: translateY(-27vh);
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  opacity: 0;
+}
+.content .body {
+  margin-bottom: 32px;
 }
 .content .body .heading {
   font-family: basis;
@@ -107,9 +136,9 @@ body {
 .content .body .subheading {
   margin-top: 8px;
   font-family: basis;
-  font-size: 20px;
-  line-height: 27px;
-  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 200;
   opacity: 0.8;
   letter-spacing: -0.7px;
   color: white;
