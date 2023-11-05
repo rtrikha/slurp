@@ -512,6 +512,8 @@ const starR = document.getElementById('star-r');
 const circleblur = document.getElementById('circleblur');
 const content = document.getElementById('content');
 const headerblur = document.getElementById('headerblur');
+const cardcontainer1 = document.getElementById('cardcontainer1');
+const cardcontainer2 = document.getElementById('cardcontainer2');
 
 function pillInactive() {
 	logoText.style.color = '#ffffff';
@@ -554,7 +556,7 @@ function initiateFriday() {
 		document.body.style.overflow = 'hidden';
 	}, 800);
 	setTimeout(() => {
-		document.body.style.backgroundColor = '#f15700';
+		document.body.style.backgroundColor = '#121212';
 	}, 1200);
 	setTimeout(() => {
 		document.body.style.overflow = 'auto';
@@ -563,6 +565,10 @@ function initiateFriday() {
 	setTimeout(() => {
 		circleblur.style.display = 'none';
 		content.style.display = 'block';
+		var computedHeight = cardcontainer1.getBoundingClientRect().width * 1.4;
+		var computedHeight = cardcontainer2.getBoundingClientRect().width * 1.4;
+		cardcontainer1.style.height = `${computedHeight}px`;
+		cardcontainer2.style.height = `${computedHeight}px`;
 	}, 1500);
 	setTimeout(() => {
 		content.style.transform = 'translateY(-28vh)';

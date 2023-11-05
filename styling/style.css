@@ -19,7 +19,7 @@
   font-weight: 800;
 }
 body {
-  background-color: #02060c;
+  background-color: #f15700;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,7 +28,7 @@ body {
 .circleblur {
   width: 100vw;
   height: 100vw;
-  background: #f15700;
+  background: #121212;
   position: absolute;
   top: 0;
   border-radius: 100000000px;
@@ -40,7 +40,7 @@ body {
 .headerblur {
   width: 100vw;
   height: 120px;
-  background: linear-gradient(180deg, #f15700 0%, rgba(241, 87, 0, 0) 100%);
+  background: linear-gradient(180deg, #121212 0%, rgba(241, 87, 0, 0) 100%);
   position: fixed;
   top: 0;
   z-index: 1;
@@ -58,16 +58,18 @@ body {
   width: -moz-min-content;
   width: min-content;
   margin-top: 44vh;
-  border: 2px solid rgb(35, 35, 35);
+  border: 2px solid rgba(255, 255, 255, 0.2549019608);
   padding: 16px 24px;
-  border-radius: 40px;
   transform-style: preserve-3d;
   transform: perspective(1000);
   z-index: 1000;
+  border-radius: 40px;
 }
 .enteringPill:hover {
   background-color: white;
   transition: all 0.3s ease;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.04), 0 8px 4px rgba(0, 0, 0, 0.04), 0 16px 8px rgba(0, 0, 0, 0.04), 0 32px 16px rgba(0, 0, 0, 0.02);
 }
 .enteringPill:hover .logo-text {
   color: #02060c !important;
@@ -131,17 +133,17 @@ body {
   height: auto;
   margin: 0 auto;
   display: none;
-  transform: translateY(-27vh);
-  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateY(-22vh);
+  transition: all 0.3s ease-in-out;
   opacity: 0;
 }
 .content .body {
-  margin-bottom: 32px;
+  margin-bottom: 80px;
 }
 .content .body .heading {
   font-family: basis;
-  font-size: 20px;
-  letter-spacing: -0.7px;
+  font-size: 16px;
+  letter-spacing: -0.3px;
   opacity: 1;
   color: white;
   font-weight: 600;
@@ -149,11 +151,11 @@ body {
 .content .body .subheading {
   margin-top: 8px;
   font-family: basis;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 160%;
   font-weight: 200;
-  opacity: 0.8;
-  letter-spacing: -0.7px;
+  opacity: 0.7;
+  letter-spacing: -0.3px;
   color: white;
 }
 .content .body .buttons {
@@ -171,7 +173,7 @@ body {
   font-weight: 600;
   letter-spacing: -0.6px;
   border-style: none;
-  border-radius: 12px;
+  border-radius: 16px;
   background: white;
   transition: all 0.2s ease-in-out;
   text-align: center;
@@ -197,7 +199,7 @@ body {
   font-weight: 600;
   letter-spacing: -0.6px;
   border-style: none;
-  border-radius: 12px;
+  border-radius: 16px;
   background: black;
   color: white;
   text-align: center;
@@ -214,6 +216,51 @@ body {
   width: 20px;
   height: 20px;
   filter: invert(1);
+}
+.content .body .cards {
+  display: flex;
+  gap: 20px;
+}
+.content .body .cards .card {
+  margin-top: 16px;
+  width: 30%;
+  display: flex;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  height: 240px;
+}
+.content .body .cards .card .cardcover {
+  background-color: #e4d0bc;
+  border-radius: 8px 20px 20px 8px;
+  width: 100%;
+  transform: rotateY(0deg);
+  transform-origin: top left;
+  transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  background-image: url(/resources/logos/cover1.svg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  box-shadow: 0px -4px 8px 0px rgba(122, 122, 122, 0.3) inset;
+  filter: drop-shadow(0px 11px 16px rgba(0, 0, 0, 0.08));
+}
+.content .body .cards .card .cardcover:hover {
+  transform: rotateY(-24deg);
+}
+.content .body .cards .card .cardcover img {
+  width: 100%;
+}
+.content .body .cards .card .inside {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f1e9e0;
+  border-radius: 20px;
+}
+.content .body .cards .card:hover {
+  transform: rotate(20deg);
 }
 @media (max-width: 470px) {
   .content {
