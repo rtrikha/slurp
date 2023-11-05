@@ -115,7 +115,8 @@ body {
 
 .content {
 	text-align: left;
-	width: 32vw;
+	//width: 32vw;
+	max-width: 500px;
 	height: auto;
 	margin: 0 auto;
 	//display: block;
@@ -209,29 +210,44 @@ body {
 			gap: 20px;
 			.card {
 				margin-top: 16px;
-				width: 30%;
+				width: 36%;
 				display: flex;
 				transform-style: preserve-3d;
 				perspective: 800px;
 				height: 240px;
 				.cardcover {
-					background-color: #e4d0bc;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					background-color: #eee9ff;
 					border-radius: 8px 20px 20px 8px;
 					width: 100%;
+					padding: 10%;
 					transform: rotateY(0deg);
 					transform-origin: top left;
 					transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-					background-image: url(/resources/logos/cover1.svg);
-					background-repeat: no-repeat;
-					background-position: top;
-					background-size: contain;
 					box-shadow: 0px -4px 8px 0px rgba(122, 122, 122, 0.3) inset;
 					filter: drop-shadow(0px 11px 16px rgba(0, 0, 0, 0.08));
+
 					&:hover {
 						transform: rotateY(-24deg);
 					}
-					img {
-						width: 100%;
+					.card-heading {
+						color: #312070;
+						font-family: basis;
+						font-size: 18px;
+						font-weight: 600;
+						letter-spacing: -0.8px;
+						line-height: 120%;
+					}
+					.card-subheading {
+						color: #5134b6;
+						opacity: 0.5;
+						font-family: basis;
+						font-size: 12px;
+						font-weight: 400;
+						letter-spacing: -0.4px;
+						line-height: 130%;
 					}
 				}
 				.inside {
@@ -241,31 +257,73 @@ body {
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background: #f1e9e0;
+					background: #ffffff;
 					border-radius: 20px;
 				}
 				&:hover {
 					transform: rotate(20deg);
 				}
 			}
+
+			#cardcontainer2 {
+				.cardcover {
+					background-color: #d4f6f2;
+
+					.card-heading {
+						color: #084c44;
+					}
+					.card-subheading {
+						color: #0c7266;
+					}
+				}
+			}
+		}
+		.logos {
+			margin-top: 20px;
+			display: flex;
+			gap: 20px;
+			opacity: 0.2;
+			flex-wrap: wrap;
 		}
 	}
 
-	@media (max-width: 470px) {
-		width: 70vw;
-		.heading {
-			font-size: 18px !important;
+	@media (max-width: 1000px) {
+		max-width: 480px;
+		.cards {
+			.card {
+				width: 44% !important;
+			}
 		}
-		.subheading {
-			font-size: 16px !important;
-			line-height: 21px !important;
-		}
+	}
+
+	@media (max-width: 720px) {
+		max-width: 400px;
+	}
+
+	@media (max-width: 480px) {
+		max-width: 360px;
 		.buttons {
 			.figma {
 				font-size: 14px !important;
 			}
 			.github {
 				font-size: 14px !important;
+			}
+		}
+	}
+	@media (max-width: 400px) {
+		max-width: 300px;
+		.cards {
+			flex-direction: column;
+			gap: 0px;
+			.card {
+				width: 60% !important;
+			}
+			#cardcontainer2 {
+				z-index: -1;
+				margin-top: -36px !important;
+				margin-left: 90px;
+				transform: rotate(2deg) !important;
 			}
 		}
 	}

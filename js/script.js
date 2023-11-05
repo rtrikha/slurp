@@ -588,3 +588,5 @@ function checkIfDivLeftViewport() {
 		headerblur.style.display = 'none';
 	}
 }
+
+initiateFriday();

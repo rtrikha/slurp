@@ -129,7 +129,7 @@ body {
 
 .content {
   text-align: left;
-  width: 32vw;
+  max-width: 500px;
   height: auto;
   margin: 0 auto;
   display: none;
@@ -223,31 +223,45 @@ body {
 }
 .content .body .cards .card {
   margin-top: 16px;
-  width: 30%;
+  width: 36%;
   display: flex;
   transform-style: preserve-3d;
   perspective: 800px;
   height: 240px;
 }
 .content .body .cards .card .cardcover {
-  background-color: #e4d0bc;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #eee9ff;
   border-radius: 8px 20px 20px 8px;
   width: 100%;
+  padding: 10%;
   transform: rotateY(0deg);
   transform-origin: top left;
   transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  background-image: url(/resources/logos/cover1.svg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: contain;
   box-shadow: 0px -4px 8px 0px rgba(122, 122, 122, 0.3) inset;
   filter: drop-shadow(0px 11px 16px rgba(0, 0, 0, 0.08));
 }
 .content .body .cards .card .cardcover:hover {
   transform: rotateY(-24deg);
 }
-.content .body .cards .card .cardcover img {
-  width: 100%;
+.content .body .cards .card .cardcover .card-heading {
+  color: #312070;
+  font-family: basis;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 120%;
+}
+.content .body .cards .card .cardcover .card-subheading {
+  color: #5134b6;
+  opacity: 0.5;
+  font-family: basis;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  line-height: 130%;
 }
 .content .body .cards .card .inside {
   z-index: -1;
@@ -256,27 +270,67 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #f1e9e0;
+  background: #ffffff;
   border-radius: 20px;
 }
 .content .body .cards .card:hover {
   transform: rotate(20deg);
 }
-@media (max-width: 470px) {
+.content .body .cards #cardcontainer2 .cardcover {
+  background-color: #d4f6f2;
+}
+.content .body .cards #cardcontainer2 .cardcover .card-heading {
+  color: #084c44;
+}
+.content .body .cards #cardcontainer2 .cardcover .card-subheading {
+  color: #0c7266;
+}
+.content .body .logos {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+  opacity: 0.2;
+  flex-wrap: wrap;
+}
+@media (max-width: 1000px) {
   .content {
-    width: 70vw;
+    max-width: 480px;
   }
-  .content .heading {
-    font-size: 18px !important;
+  .content .cards .card {
+    width: 44% !important;
   }
-  .content .subheading {
-    font-size: 16px !important;
-    line-height: 21px !important;
+}
+@media (max-width: 720px) {
+  .content {
+    max-width: 400px;
+  }
+}
+@media (max-width: 480px) {
+  .content {
+    max-width: 360px;
   }
   .content .buttons .figma {
     font-size: 14px !important;
   }
   .content .buttons .github {
     font-size: 14px !important;
+  }
+}
+@media (max-width: 400px) {
+  .content {
+    max-width: 300px;
+  }
+  .content .cards {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .content .cards .card {
+    width: 60% !important;
+  }
+  .content .cards #cardcontainer2 {
+    z-index: -1;
+    margin-top: -36px !important;
+    margin-left: 90px;
+    transform: rotate(2deg) !important;
   }
 }/*# sourceMappingURL=style.css.map */
