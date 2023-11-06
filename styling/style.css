@@ -86,7 +86,44 @@ body {
   }
 }
 .footer .logo {
-  opacity: 1;
+  width: 50%;
+}
+@media (max-width: 1000px) {
+  .footer .bud .eyes {
+    margin-top: 74px;
+  }
+}
+@media (max-width: 720px) {
+  .footer .bud .eyes {
+    margin-top: 64px;
+    margin-left: 4px;
+    -moz-column-gap: 2px;
+         column-gap: 2px;
+  }
+  .footer .logo img {
+    width: 70%;
+  }
+}
+@media (max-width: 480px) {
+  .footer .bud .eyes {
+    transform: scale(0.9);
+    margin-top: 56px;
+  }
+  .footer .logo img {
+    width: 70%;
+  }
+}
+@media (max-width: 400px) {
+  .footer .bud {
+    width: 25%;
+  }
+  .footer .bud .eyes {
+    transform: scale(0.9);
+    margin-top: 56px;
+  }
+  .footer .logo img {
+    width: 70%;
+  }
 }
 
 .circleblur {

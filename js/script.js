@@ -576,6 +576,7 @@ function initiateFriday() {
 		content.style.transform = 'translateY(-28vh)';
 		content.style.opacity = '1';
 	}, 1600);
+	enteringPill.onclick = false;
 }
 
 window.addEventListener('scroll', checkIfDivLeftViewport);
@@ -587,16 +588,6 @@ function checkIfDivLeftViewport() {
 		headerblur.style.display = 'none';
 	}
 }
-
-const button = document.getElementById('enteringPill');
-
-button.addEventListener('mouseover', () => {
-	//playAudio();
-});
-
-button.addEventListener('mouseout', () => {});
-
-initiateFriday();
 
 const pupils = document.querySelectorAll('.eye-outer .eye');
 window.addEventListener('mousemove', (e) => {
@@ -612,3 +603,5 @@ var intervalId = setInterval(function () {
 	document.getElementById('eye1').style.animation = 'blink 2s infinite forwards';
 	document.getElementById('eye2').style.animation = 'blink 2s infinite forwards';
 }, 8000);
+
+//initiateFriday();
