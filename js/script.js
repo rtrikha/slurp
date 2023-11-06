@@ -505,6 +505,7 @@ var VanillaTilt = (function () {
 	return VanillaTilt;
 })();
 
+var snd = new Audio('resources/DingSound.mp3');
 const enteringPill = document.getElementById('enteringPill');
 const logoText = document.getElementById('logo-text');
 const starL = document.getElementById('star-l');
@@ -554,6 +555,7 @@ function initiateFriday() {
 		circleblur.style.transition = 'all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86)';
 		circleblur.style.filter = 'blur(1)';
 		document.body.style.overflow = 'hidden';
+		//snd.play();
 	}, 800);
 	setTimeout(() => {
 		document.body.style.backgroundColor = '#121212';
@@ -580,13 +582,33 @@ window.addEventListener('scroll', checkIfDivLeftViewport);
 
 function checkIfDivLeftViewport() {
 	if (enteringPill.getBoundingClientRect().top <= 0) {
-		//enteringPill.style.transform = 'translateX(100%)';
-		console.log('left');
 		headerblur.style.display = 'block';
 	} else {
-		console.log('right');
 		headerblur.style.display = 'none';
 	}
 }
 
-//initiateFriday();
+const button = document.getElementById('enteringPill');
+
+button.addEventListener('mouseover', () => {
+	//playAudio();
+});
+
+button.addEventListener('mouseout', () => {});
+
+initiateFriday();
+
+const pupils = document.querySelectorAll('.eye .pupil');
+window.addEventListener('mousemove', (e) => {
+	pupils.forEach((pupil) => {
+		var rect = pupil.getBoundingClientRect();
+		var x = (e.pageX - rect.left) / 140 + 'px';
+		var y = (e.pageY - rect.top) / 100 + 'px';
+		pupil.style.transform = 'translate3d(' + x + ',' + y + ', 0px)';
+	});
+});
+
+var intervalId = setInterval(function () {
+	document.getElementById('pupil1').style.animation = 'blink 2s infinite';
+	document.getElementById('pupil2').style.animation = 'blink 2s infinite';
+}, 5000);

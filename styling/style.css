@@ -23,6 +23,68 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 0px !important;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 40px;
+}
+.footer .bud {
+  width: 20%;
+}
+.footer .bud img {
+  width: 100%;
+}
+.footer .bud .eyes {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  -moz-column-gap: 4px;
+       column-gap: 4px;
+  margin-left: 8px;
+  margin-top: 78px;
+}
+.footer .bud .eyes .eye-outer {
+  z-index: 0;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 100px;
+  display: flex;
+}
+.footer .bud .eyes .eye-outer .eye {
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  margin-left: 5px;
+  margin-top: 3px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer .bud .eyes .eye-outer .eye .pupil {
+  width: 6px;
+  height: 6px;
+  border-radius: 101px;
+  background-color: #fff;
+}
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  5%, 95% {
+    opacity: 1;
+  }
+}
+.footer .logo {
+  opacity: 1;
+  width: 80%;
 }
 
 .circleblur {

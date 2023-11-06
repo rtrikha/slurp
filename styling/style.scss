@@ -6,7 +6,75 @@ body {
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	height: 0px !important;
 }
+
+.footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: baseline;
+	padding-bottom: 40px;
+
+	.bud {
+		//position: absolute;
+		width: 20%;
+		img {
+			width: 100%;
+		}
+		.eyes {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			flex-direction: row;
+			column-gap: 4px;
+			margin-left: 8px;
+			margin-top: 78px;
+			.eye-outer {
+				z-index: 0;
+				width: 24px;
+				height: 24px;
+				background-color: white;
+				border-radius: 100px;
+				display: flex;
+				.eye {
+					width: 18px;
+					height: 18px;
+					border-radius: 100%;
+					margin-left: 5px;
+					margin-top: 3px;
+					background-color: #000;
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+
+					.pupil {
+						width: 6px;
+						height: 6px;
+						border-radius: 101px;
+						background-color: #fff;
+					}
+				}
+			}
+
+			@keyframes blink {
+				0%,
+				100% {
+					opacity: 0;
+				}
+				5%,
+				95% {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.logo {
+		opacity: 1;
+		width: 80%;
+	}
+}
+
 .circleblur {
 	width: 100vw;
 	height: 100vw;
