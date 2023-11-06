@@ -87,7 +87,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 4px;
-  transform: translateZ(12px);
+  transform: translateZ(24px);
 }
 .enteringPill .inner .logo-text {
   color: white;

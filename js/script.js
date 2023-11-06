@@ -589,4 +589,4 @@ function checkIfDivLeftViewport() {
 	}
 }
 
-initiateFriday();
+//initiateFriday();

@@ -51,7 +51,6 @@ body {
 		transition: all 0.3s ease;
 		border: 2px solid #ffffff;
 		box-shadow: 0 4px 2px rgba(0, 0, 0, 0.04), 0 8px 4px rgba(0, 0, 0, 0.04), 0 16px 8px rgba(0, 0, 0, 0.04), 0 32px 16px rgba(0, 0, 0, 0.02);
-
 		.logo-text {
 			color: #02060c !important;
 		}
@@ -70,7 +69,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		gap: 4px;
-		transform: translateZ(12px);
+		transform: translateZ(24px);
 
 		.logo-text {
 			color: white;
