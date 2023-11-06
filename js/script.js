@@ -596,7 +596,7 @@ button.addEventListener('mouseover', () => {
 
 button.addEventListener('mouseout', () => {});
 
-initiateFriday();
+//initiateFriday();
 
 const pupils = document.querySelectorAll('.eye .pupil');
 window.addEventListener('mousemove', (e) => {
