@@ -596,19 +596,19 @@ button.addEventListener('mouseover', () => {
 
 button.addEventListener('mouseout', () => {});
 
-//initiateFriday();
+initiateFriday();
 
-const pupils = document.querySelectorAll('.eye .pupil');
+const pupils = document.querySelectorAll('.eye-outer .eye');
 window.addEventListener('mousemove', (e) => {
 	pupils.forEach((pupil) => {
 		var rect = pupil.getBoundingClientRect();
-		var x = (e.pageX - rect.left) / 140 + 'px';
-		var y = (e.pageY - rect.top) / 100 + 'px';
+		var x = (e.pageX - rect.left) / 120 + 'px';
+		var y = (e.pageY - rect.top) / 120 + 'px';
 		pupil.style.transform = 'translate3d(' + x + ',' + y + ', 0px)';
 	});
 });
 
 var intervalId = setInterval(function () {
-	document.getElementById('pupil1').style.animation = 'blink 2s infinite';
-	document.getElementById('pupil2').style.animation = 'blink 2s infinite';
-}, 5000);
+	document.getElementById('eye1').style.animation = 'blink 2s infinite forwards';
+	document.getElementById('eye2').style.animation = 'blink 2s infinite forwards';
+}, 8000);

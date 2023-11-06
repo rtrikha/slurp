@@ -17,7 +17,6 @@ body {
 	padding-bottom: 40px;
 
 	.bud {
-		//position: absolute;
 		width: 20%;
 		img {
 			width: 100%;
@@ -37,12 +36,13 @@ body {
 				background-color: white;
 				border-radius: 100px;
 				display: flex;
+				overflow: hidden;
 				.eye {
 					width: 18px;
 					height: 18px;
 					border-radius: 100%;
 					margin-left: 5px;
-					margin-top: 3px;
+					margin-top: 2px;
 					background-color: #000;
 					display: flex;
 					align-items: center;
@@ -51,6 +51,8 @@ body {
 					.pupil {
 						width: 6px;
 						height: 6px;
+						margin-top: 3px;
+						margin-right: -9px;
 						border-radius: 101px;
 						background-color: #fff;
 					}
@@ -60,18 +62,17 @@ body {
 			@keyframes blink {
 				0%,
 				100% {
-					opacity: 0;
+					height: 0px;
 				}
 				5%,
 				95% {
-					opacity: 1;
+					height: 18px;
 				}
 			}
 		}
 	}
 	.logo {
 		opacity: 1;
-		width: 80%;
 	}
 }
 
