@@ -63,11 +63,12 @@ body {
   height: 18px;
   border-radius: 100%;
   margin-left: 5px;
-  margin-top: 2px;
+  margin-top: -8px;
   background-color: #000;
   display: flex;
   align-items: center;
   flex-direction: column;
+  transform-origin: center;
 }
 .footer .bud .eyes .eye-outer .eye .pupil {
   width: 6px;
@@ -243,7 +244,7 @@ body {
 }
 .content .body .heading {
   font-family: basis;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: -0.3px;
   opacity: 1;
   color: white;
@@ -264,6 +265,17 @@ body {
   gap: 8px;
   margin-top: 16px;
 }
+@keyframes scaleDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .content .body .buttons .figma {
   display: flex;
   cursor: pointer;
@@ -276,7 +288,6 @@ body {
   border-style: none;
   border-radius: 16px;
   background: white;
-  box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.22) inset;
   transition: all 0.2s ease-in-out;
   text-align: center;
   align-items: center;
@@ -285,7 +296,6 @@ body {
 }
 .content .body .buttons .figma:hover {
   background: #eaeaea;
-  transform: scale(0.98);
 }
 .content .body .buttons .figma img {
   width: 20px;
@@ -303,7 +313,6 @@ body {
   border-style: none;
   border-radius: 16px;
   background: #272727;
-  box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.22) inset;
   color: white;
   text-align: center;
   align-items: center;
@@ -313,7 +322,6 @@ body {
 }
 .content .body .buttons .github:hover {
   background: #1d1d1d;
-  transform: scale(0.98);
 }
 .content .body .buttons .github img {
   width: 20px;
@@ -334,17 +342,26 @@ body {
 }
 .content .body .cards .card .cardcover {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  overflow: hidden;
   background-color: #eee9ff;
   border-radius: 8px 20px 20px 8px;
   width: 100%;
-  padding: 10%;
   transform: rotateY(0deg);
   transform-origin: top left;
   transition: transform 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  box-shadow: 0px -4px 8px 0px rgba(122, 122, 122, 0.3) inset;
-  filter: drop-shadow(0px 11px 16px rgba(0, 0, 0, 0.08));
+}
+.content .body .cards .card .cardcover .book-binding {
+  display: none;
+  width: 40px;
+  height: 100%;
+  background: #2c2543;
+}
+.content .body .cards .card .cardcover .book-description {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10%;
 }
 .content .body .cards .card .cardcover:hover {
   transform: rotateY(-24deg);
@@ -395,6 +412,31 @@ body {
   opacity: 0.2;
   flex-wrap: wrap;
 }
+.content .card-scroll {
+  display: flex;
+  overflow-x: auto;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+.content .card-scroll .ethos-card {
+  display: flex;
+  flex-direction: column-reverse;
+  min-width: 40%;
+  height: 300px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 20px;
+  background-color: #2e2e2e;
+  padding: 6%;
+  border-radius: 20px;
+}
+.content .card-scroll .ethos-card img {
+  width: 40%;
+}
+.content .card-scroll .ethos-card .card-content .subheading {
+  margin-top: 4px;
+}
 @media (max-width: 1000px) {
   .content {
     max-width: 480px;
@@ -436,4 +478,18 @@ body {
     margin-left: 90px;
     transform: rotate(2deg) !important;
   }
+}
+
+.downloadPill {
+  width: 16%;
+  height: 60px;
+  background-color: white;
+  position: fixed;
+  bottom: 4%;
+  transform: translate(-50%, 0);
+  left: 50%;
+  z-index: 100;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-radius: 100px;
 }/*# sourceMappingURL=style.css.map */

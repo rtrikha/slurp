@@ -10,6 +10,7 @@
 	<body>
 		<div class="headerblur" id="headerblur"></div>
 		<div class="circleblur" id="circleblur"></div>
+		<div class="downloadPill"></div>
 		<div class="enteringPill" id="enteringPill" onclick="initiateFriday()">
 			<div class="inner">
 				<div class="star-l" id="star-l">
@@ -29,10 +30,28 @@
 					wrong definition. Readers are encouraged to explore, reflect, and form their own perspectives. The exploration of systems is a continuous journey of discovery and growth.
 				</div>
 				<div class="buttons">
-					<button class="figma"><img src="/resources/logos/figma.png" alt="" />Figma</button>
-					<button class="github"><img src="/resources/logos/GitHub.png" alt="" />GitHub</button>
+					<button class="figma" onclick="scaleDown()" id="figma"><img src="/resources/logos/figma.png" alt="" />Figma</button>
+					<button class="github" onclick="scaleDown()" id="github"><img src="/resources/logos/GitHub.png" alt="" />GitHub</button>
 				</div>
 			</div>
+			<!-- <div class="body">
+				<div class="heading">guiding principles</div>
+				<div class="card-scroll">
+					<div class="ethos-card">
+						<img src="./resources/logos/bag.svg" alt="" />
+						<div class="card-content">
+							<div class="heading">noticiability</div>
+							<div class="subheading">This is a body which will be hidden</div>
+						</div>
+					</div>
+					<div class="ethos-card">
+						<div class="heading">awareness</div>
+					</div>
+					<div class="ethos-card">
+						<div class="heading">comphrension</div>
+					</div>
+				</div>
+			</div> -->
 			<div class="body">
 				<div class="heading">why we made slurp?</div>
 				<div class="subheading">
@@ -55,15 +74,21 @@
 				<div class="cards">
 					<div class="card" style="transform: rotate(-1deg)" id="cardcontainer1">
 						<div class="cardcover">
-							<div class="card-heading">Building products at Swiggy</div>
-							<div class="card-subheading">How we at Swiggy build products using our design system</div>
+							<div class="book-description">
+								<div class="card-heading">Building products at Swiggy</div>
+								<div class="card-subheading">How we at Swiggy build products using our design system</div>
+							</div>
+							<div class="book-binding"></div>
 						</div>
 						<div class="inside"></div>
 					</div>
 					<div class="card" style="transform: rotate(1deg)" id="cardcontainer2">
 						<div class="cardcover">
-							<div class="card-heading">What drives Swiggy’s brand new experience</div>
-							<div class="card-subheading">Design language system(DLS) combines the set of reusable design tokens</div>
+							<div class="book-description">
+								<div class="card-heading">Building products at Swiggy</div>
+								<div class="card-subheading">How we at Swiggy build products using our design system</div>
+							</div>
+							<div class="book-binding"></div>
 						</div>
 						<div class="inside"></div>
 					</div>
@@ -89,6 +114,8 @@
 			</div>
 		</div>
 	</body>
+	<script src="js/matter.js"></script>
+	<script src="./js/p5.js"></script>
 	<script src="./js/script.js"></script>
 
 	<script type="text/javascript">

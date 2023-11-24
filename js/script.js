@@ -529,7 +529,6 @@ function pillActive() {
 	logoText.style.color = '#000000';
 	starL.style.filter = 'invert(1)';
 	starR.style.filter = 'invert(1)';
-	enteringPill.style.boxShadow = '0 4px 2px rgba(0,0,0,0.04), 0 8px 4px rgba(0,0,0,0.04), 0 16px 8px rgba(0,0,0,0.04), 0 32px 16px rgba(0,0,0,0.02)';
 	enteringPill.style.background = '#ffffff';
 	enteringPill.style.border = '2px solid rgba(35, 35, 35,0)';
 	enteringPill.style.transition = 'all 0.4s ease';
@@ -545,7 +544,6 @@ function initiateFriday() {
 		enteringPill.style.transform = 'translateY(-36vh)';
 		enteringPill.style.transition = 'all 0.6s cubic-bezier(0.785, 0.135, 0.15, 0.86)';
 	}, 500);
-
 	setTimeout(() => {
 		circleblur.style.top = '-50vw';
 		circleblur.style.width = '100vw';
@@ -555,6 +553,7 @@ function initiateFriday() {
 		circleblur.style.transition = 'all 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86)';
 		circleblur.style.filter = 'blur(1)';
 		document.body.style.overflow = 'hidden';
+
 		//snd.play();
 	}, 800);
 	setTimeout(() => {
@@ -563,7 +562,6 @@ function initiateFriday() {
 	setTimeout(() => {
 		document.body.style.overflow = 'auto';
 	}, 1300);
-
 	setTimeout(() => {
 		circleblur.style.display = 'none';
 		content.style.display = 'block';
@@ -605,3 +603,9 @@ var intervalId = setInterval(function () {
 }, 8000);
 
 //initiateFriday();
+
+function scaleDown() {
+	//document.getElementById('figma').style.animation = 'scaleDown 0.2s ease-in-out';
+	document.getElementById('github').style.scale = 'scaleDown 0.2s ease-in-out';
+	//console.log('it did');
+}
